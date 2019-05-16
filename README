@@ -1,0 +1,5 @@
+call Forex to get Spot rate
+
+localhost:8080/forex
+localhost:8080/forex/all
+localhost:8080/forex/USDCAD
