@@ -5,5 +5,7 @@ public interface ForexRateService {
 	String getCurrenciesList();
 	String getAllSpot();
 	String getSpot(String currencyPair);
+	
+	String getForexListFromInv();
 
 }

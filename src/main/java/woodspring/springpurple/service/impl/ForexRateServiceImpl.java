@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import woodspring.springpurple.dao.ForexApiHttpRepository;
+import woodspring.springpurple.dao.InvestingRepository;
 import woodspring.springpurple.service.ForexRateService;
 
 
@@ -12,6 +13,9 @@ public class ForexRateServiceImpl implements ForexRateService {
 
 	@Autowired
 	ForexApiHttpRepository fxApiHttpRepo;
+	
+	@Autowired
+	InvestingRepository investingRepo;
 	
 	@Override
 	public String getCurrenciesList() {
@@ -41,6 +45,18 @@ public class ForexRateServiceImpl implements ForexRateService {
 	@Override
 	public String getAllSpot() {
 		String retStr = fxApiHttpRepo.getAllSpotRate();
+		return retStr;
+	}
+
+	@Override
+	public String getForexListFromInv() {
+		String retStr = new String();
+		try {
+			retStr = investingRepo.sendGet(retStr) ;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return retStr;
 	}
 

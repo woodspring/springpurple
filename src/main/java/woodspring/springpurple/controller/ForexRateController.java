@@ -20,6 +20,12 @@ public class ForexRateController {
 	  return fxRateSrv.getCurrenciesList();
 	}
 
+	
+	@GetMapping("/inv")
+	public String findAllFromInv(){
+	  return fxRateSrv.getForexListFromInv();
+	}
+
 	@RequestMapping("/all")
 	public String getSllSpotRate(){
 	  return fxRateSrv.getAllSpot();
