@@ -59,5 +59,17 @@ public class ForexRateServiceImpl implements ForexRateService {
 		}
 		return retStr;
 	}
+	
+	@Override
+	public String getFxOptionFromInv() {
+		String retStr = new String();
+		try {
+			retStr = investingRepo.sendGetFxOption(retStr) ;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return retStr;
+	}
 
 }

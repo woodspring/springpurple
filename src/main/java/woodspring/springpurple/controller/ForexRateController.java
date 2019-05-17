@@ -27,8 +27,13 @@ public class ForexRateController {
 	}
 
 	@RequestMapping("/all")
-	public String getSllSpotRate(){
+	public String getAllSpotRate(){
 	  return fxRateSrv.getAllSpot();
+	}
+	
+	@RequestMapping("/fxoption")
+	public String getFxOption(){
+	  return fxRateSrv.getFxOptionFromInv();
 	}
 	
 	@GetMapping(path = {"/{pair}"})

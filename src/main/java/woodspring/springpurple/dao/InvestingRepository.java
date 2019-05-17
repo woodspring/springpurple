@@ -68,7 +68,7 @@ System.out.println("line "+index+++" ->["+ inputLine+"]");
 	// HTTP GET request
 	public String sendGetFxOption(String query) throws Exception {
 
-		String urlStr = ( query == null || query.isEmpty()) ? forexApiUrl+"/forex-options" : forexApiUrl+"?pairs="+query;
+		String urlStr = ( query == null || query.isEmpty()) ? forexApiUrl+"forex-options" : forexApiUrl+"?pairs="+query;
 		URL url = new URL(urlStr);
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
